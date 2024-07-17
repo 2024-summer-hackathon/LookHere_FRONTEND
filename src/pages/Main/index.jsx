@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <S.Layout>
       <S.Title>자, 여기 보세요</S.Title>
-      <S.StartBtn onClick={handleStartClick}>촬영시작</S.StartBtn>
+      <S.StartBtn onClick={handleStartClick}>촬영 시작</S.StartBtn>
     </S.Layout>
   );
 };

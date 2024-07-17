@@ -67,19 +67,20 @@ export const ImageWrapper = styled.div`
 
 export const ImgDownBtn = styled.button`
   font-weight: bold;
-  width:150px;
-  height: 60px;
+  padding: 20px 40px;
   border: none;
-  border-radius: 30px;
-  background: lightgray;
+  border-radius: 15px;
+  background: #d9d9d9;
+  color: black;
+  font-size: 22px;
   transition: 0.2s;
   cursor: pointer;
 
   &:hover {
-    background: gray;
+    background: #cfcdcd;
   }
 
   &:active {
     background: darkgray;
   }
-`
+`;
