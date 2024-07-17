@@ -1,10 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+export const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+`;
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0px;
+  padding-top: 40px;
   gap: 80px;
 `;
 
@@ -15,11 +23,12 @@ export const Item = styled.img`
 `;
 
 export const Title = styled.span`
-  font-size: 22px;
+  font-size: 36px;
+  font-weight: bold;
 `;
 
 export const Desc = styled.span`
-  font-size: 21px;
+  font-size: 30px;
 `;
 
 const FlexCenterColumn = styled.div`
@@ -34,11 +43,11 @@ export const Topbar = styled(FlexCenterColumn)`
 `;
 
 export const ItemContainer = styled(FlexCenterColumn)`
-  background-color: ${props => (props.selected ? '#efefef' : '#fff')};
+  background-color: ${(props) => (props.selected ? "#efefef" : "#fff")};
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {
-    background-color: ${props => (props.selected ? '#efefef' : '#e0e0e0')};
+    background-color: ${(props) => (props.selected ? "#efefef" : "#e0e0e0")};
   }
   border-radius: 10px;
   margin-top: 20px;
@@ -51,8 +60,10 @@ export const Tag = styled.div`
   border-radius: 10px;
   text-align: center;
   background-color: ${(props) =>
-    props.frameColor === 'yellow' ? '#F9F6A3' :
-    props.frameColor === 'pink' ? 'pink' :
-    '#D9D9D9'};
+    props.frameColor === "yellow"
+      ? "#F9F6A3"
+      : props.frameColor === "pink"
+      ? "pink"
+      : "#D9D9D9"};
   margin-bottom: 20px;
 `;
