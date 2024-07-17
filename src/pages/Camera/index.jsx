@@ -11,7 +11,7 @@ export default function Webcam({ setImgs }) {
     const webcamRef = useRef(null);
     const [camera, setCamera] = useState(false)
     const [change, setChange] = useState(false)
-    const [poseImg, setPoseImg] = useState();
+    const [poseImg, setPoseImg] = useState(null);
     const [num, setNum] = useState();
     const [cnt, setCnt] = useState(3);
 
@@ -21,20 +21,21 @@ export default function Webcam({ setImgs }) {
     };
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                if (change == false) {
-                    setChange(true)
-                    const response = await axios.get(`http://127.0.0.1:8000/pose/?string=${localStorage.getItem('selectedKeyword')}&people=2`)
-                    console.log(localStorage.getItem('selectedKeyword'))
-                    setPoseImg(response.data)
+        if (!change) {
+            async function fetchData() {
+                try {
+                    console.log("작동됨");
+                    const response = await axios.get(`http://127.0.0.1:8000/pose/?string=${localStorage.getItem('selectedKeyword')}&people=2`);
+                    console.log(localStorage.getItem('selectedKeyword'));
+                    
+                    if(poseImg == null) setPoseImg(response.data);
+                    setChange(true);
+                } catch (error) {
+                    console.error('Error fetching data:', error);
                 }
-            } catch (error) {
-                console.error('Axios error:', error);
             }
+            fetchData();
         }
-
-        fetchData();
     }, []);
 
     const capture = () => {
@@ -62,7 +63,7 @@ export default function Webcam({ setImgs }) {
                     setTimeout(() => {
                         setCamera(false);
                         navigate('/photoResult');
-                    },1000);
+                    }, 1000);
                 }
             }
         };
@@ -83,7 +84,7 @@ export default function Webcam({ setImgs }) {
             <S.Right>
                 <S.TextBox>
                     <S.ExText1 style={{ float: "left" }}>#3. 추천받은 포즈에 따라 하나뿐인 사진을 남겨보세요!</S.ExText1>
-                    <S.ExText style={{ float: "right" }}>{(4 - cnt) <= 4 ? 4-cnt : 4} / 4</S.ExText>
+                    <S.ExText style={{ float: "right" }}>{(4 - cnt) <= 4 ? 4 - cnt : 4} / 4</S.ExText>
                 </S.TextBox>
 
                 <WebCam
