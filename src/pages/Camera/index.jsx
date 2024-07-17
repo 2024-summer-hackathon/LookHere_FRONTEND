@@ -62,16 +62,16 @@ export default function Webcam({ setImgs }) {
                     <S.ExText style={{ float: "right" }}>{4 - cnt} / 4</S.ExText>
                 </S.TextBox>
 
-                <h2 style={{ position: "fixed", top: "200px", left: "500px", fontSize: "150px" }}>{num}</h2>
                 <WebCam
                     audio={false}
                     ref={webcamRef}
                     screenshotFormat="image/png"
                     videoConstraints={videoConstraints}
                     mirrored={true} />
+                <S.CountBox>{num}</S.CountBox>
                 <S.Capture onClick={capture} disabled={camera}></S.Capture>
             </S.Right>
-            
+
         </S.Container>
     )
 }

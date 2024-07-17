@@ -58,3 +58,13 @@ export const Capture = styled.button`
     left:0px;
     margin-left:325px;
 `
+
+export const CountBox = styled.h2 `
+    font-size: 150px;
+    position:absolute;
+    top: 0px;
+    margin-top: 175px;
+    left:0px;
+    margin-left:315px;
+    color:white;
+`
