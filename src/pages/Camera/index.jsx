@@ -49,7 +49,7 @@ export default function Webcam({ setImgs }) {
         <S.Container>
             <S.Left>
                 <S.TextBox>
-                    <S.ExText style={{ float: "left" }}>(키워드) 추천 포즈 #1</S.ExText>
+                    <S.ExText1 style={{ float: "left" }}>(키워드) 추천 포즈 #1</S.ExText1>
                 </S.TextBox>
                 <S.Pose>
 
@@ -58,7 +58,7 @@ export default function Webcam({ setImgs }) {
 
             <S.Right>
                 <S.TextBox>
-                    <S.ExText style={{ float: "left" }}>#3. 추천받은 포즈에 따라 하나뿐인 사진을 남겨보세요!</S.ExText>
+                    <S.ExText1 style={{ float: "left" }}>#3. 추천받은 포즈에 따라 하나뿐인 사진을 남겨보세요!</S.ExText1>
                     <S.ExText style={{ float: "right" }}>{4 - cnt} / 4</S.ExText>
                 </S.TextBox>
 
