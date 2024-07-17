@@ -1,14 +1,12 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import ChooseKeyWord from "./pages/ChooseKeyWord";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<ChooseKeyWord />} />
-        <Route path="/frame" element={<ChooseFrame />} />
-        <Route path="/result" element={<PhotoResult />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<ChooseKeyWord />} />
+    </Routes>
   );
 }
 
