@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import ruppeFrame from "../../assets/rupeeFrame.png";
-import soulFrame from "../../assets/soulFrame.png";
-import alrisoriFrame from "../../assets/alrisoriFrame.png";
+import BigRuppeFrame from "../../assets/BigRupeeFrame.png";
+import BigSoulFrame from "../../assets/BigSoulFrame.png";
+import BigAlrisoriFrame from "../../assets/BigAlrisoriFrame.png";
 import * as S from "./style";
 
 export default function PhotoResult({ imgs }) {
   const frames = [
-    { id: 1, url: ruppeFrame },
-    { id: 2, url: soulFrame },
-    { id: 3, url: alrisoriFrame },
+    { id: 1, url: BigRuppeFrame },
+    { id: 2, url: BigSoulFrame },
+    { id: 3, url: BigAlrisoriFrame },
   ];
 
   const [selectedFrame, setSelectedFrame] = useState(null);
