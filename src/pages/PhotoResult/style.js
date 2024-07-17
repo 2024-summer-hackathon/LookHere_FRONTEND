@@ -20,6 +20,7 @@ export const Frame = styled.div`
   background-position: center;
   padding-top: 19px;
   gap: 10px;
+  margin-right: 20%;
 `;
 
 export const ImageWrapper = styled.div`
@@ -34,3 +35,22 @@ export const ImageWrapper = styled.div`
     object-fit: cover;
   }
 `;
+
+export const ImgDownBtn = styled.button`
+  font-weight: bold;
+  width:150px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  background: lightgray;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background: gray;
+  }
+
+  &:active {
+    background: darkgray;
+  }
+`

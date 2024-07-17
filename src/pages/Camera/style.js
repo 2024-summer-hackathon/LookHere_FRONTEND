@@ -24,10 +24,12 @@ export const TextBox = styled.div`
   height: 50px;
 `;
 
-export const Pose = styled.div`
+export const Pose = styled.img`
   width: 350px;
   height: 484px;
   background: #d9d9d9;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const Left = styled.div`
@@ -73,3 +75,7 @@ export const CountBox = styled.h2`
   margin-left: 315px;
   color: white;
 `;
+
+export const Noaudio = styled.audio`
+    display: none;
+`
