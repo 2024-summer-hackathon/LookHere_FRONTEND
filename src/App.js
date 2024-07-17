@@ -12,7 +12,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Main />} />
-      <Route path="/choose-keyword" element={<ChooseKeyWord />} />
+      <Route path="/choose-keyword" element={<ChooseKeyWord/>} />
       <Route path="/choose-frame" element={<ChooseFrame />} />
       <Route path="/camera" element={<Webcam setImgs={setImgs}/>} />
       <Route path="/photoResult" element={<PhotoResult imgs={imgs}/>} />

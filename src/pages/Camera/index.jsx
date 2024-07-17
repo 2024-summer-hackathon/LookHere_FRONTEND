@@ -1,12 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import WebCam from "react-webcam"
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import * as S from "./style";
 
 export default function Webcam({ setImgs }) {
     const navigate = useNavigate();
     const webcamRef = useRef(null);
     const [camera, setCamera] = useState(false)
+    const [poseImg, setPoseImg] = useState();
     const [num, setNum] = useState();
     const [cnt, setCnt] = useState(3);
 
@@ -14,6 +16,20 @@ export default function Webcam({ setImgs }) {
         width: 700,
         height: 484,
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`/pose/?string=${localStorage.getItem('selectedKeyword')}&people=2`)
+                console.log(localStorage.getItem('selectedKeyword'))
+                setPoseImg(response.data)
+            } catch (error) {
+                console.error('Axios error:', error);
+            }
+        }
+
+        fetchData();
+    }, []);
 
     const capture = () => {
         setCamera(true);
@@ -52,7 +68,7 @@ export default function Webcam({ setImgs }) {
                     <S.ExText1 style={{ float: "left" }}>(키워드) 추천 포즈 #1</S.ExText1>
                 </S.TextBox>
                 <S.Pose>
-
+                    <img src={poseImg} alt=''/>
                 </S.Pose>
             </S.Left>
 
