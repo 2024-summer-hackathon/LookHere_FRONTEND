@@ -3,6 +3,7 @@ import BigRuppeFrame from "../../assets/BigRupeeFrame.png";
 import BigSoulFrame from "../../assets/BigSoulFrame.png";
 import BigAlrisoriFrame from "../../assets/BigAlrisoriFrame.png";
 import html2canvas from "html2canvas";
+import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 
 export default function PhotoResult({ imgs }) {
@@ -16,6 +17,11 @@ export default function PhotoResult({ imgs }) {
   ];
 
   const [selectedFrame, setSelectedFrame] = useState(null);
+  const navigate = useNavigate();
+
+  const handleGoHome = () => {
+    navigate("/");
+  };
 
   const download = async () => {
     if (divRef.current) {
@@ -36,7 +42,7 @@ export default function PhotoResult({ imgs }) {
       setSelectedFrame(frame);
     }
   }, []);
-
+  
   return (
     <S.Layout >
       <S.Frame frameUrl={selectedFrame ? selectedFrame.url : ""} ref={divRef}>
