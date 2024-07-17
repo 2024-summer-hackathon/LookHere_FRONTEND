@@ -25,12 +25,12 @@ export const StartBtn = styled.button`
   position: absolute;
   padding: 15px 40px;
   border: none;
-  background-color: #d9d9d9;
+  background-color: #ffd1dc;
   color: black;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
   border-radius: 8px;
-  top: 49%;
+  top: 50%;
   left: 74%;
   cursor: pointer;
 `;
