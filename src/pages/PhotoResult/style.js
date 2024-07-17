@@ -29,18 +29,31 @@ export const Frame = styled.div`
   flex-direction: column;
   align-items: center;
   width: 250px;
+  height: 740px;
+  padding-top: 20px;
+  gap: 15px;
+  margin-right: 20%;
+`;
+
+export const FrameImg = styled.div`
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
   height: 766px;
   background-image: url(${(props) => props.frameUrl});
   background-size: cover;
   background-position: center;
-  padding-top: 19px;
-  gap: 10px;
-  margin-right: 20%;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index:5;
 `;
 
 export const ImageWrapper = styled.div`
   width: 199px;
-  height: 150px;
+  height: 140px;
   overflow: hidden;
   z-index: -1;
 
@@ -48,6 +61,7 @@ export const ImageWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: -5;
   }
 `;
 

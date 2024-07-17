@@ -45,7 +45,8 @@ export default function PhotoResult({ imgs }) {
   
   return (
     <S.Layout >
-      <S.Frame frameUrl={selectedFrame ? selectedFrame.url : ""} ref={divRef}>
+      <S.Frame ref={divRef}>
+        <S.FrameImg frameUrl={selectedFrame ? selectedFrame.url : ""}></S.FrameImg>
         {imgs.map((img, index) => (
           <S.ImageWrapper key={index}>
             <img src={img} alt={`image-${index}`} />
