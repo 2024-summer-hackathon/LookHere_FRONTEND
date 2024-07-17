@@ -1,10 +1,26 @@
-export default function PhotoResult({imgs}) {
-    return (
-        <div style={{ width: "800px", height: "600px", right: "0px", top: "0px", position: "absolute", overflow: "scroll", textAlign: "center" }}>
-            <img src={imgs[0]} alt="" />
-            <img src={imgs[1]} alt="" />
-            <img src={imgs[2]} alt="" />
-            <img src={imgs[3]} alt="" />
-        </div>
-    )
+import ruppeFrame from "../../assets/rupeeFrame.png";
+import soulFrame from "../../assets/soulFrame.png";
+import alrisoriFrame from "../../assets/alrisoriFrame.png";
+import * as S from "./style";
+
+export default function PhotoResult({ id, imgs }) {
+  const frames = [
+    { id: 1, url: ruppeFrame },
+    { id: 2, url: soulFrame },
+    { id: 3, url: alrisoriFrame },
+  ];
+
+  const selectedFrame = frames.find((frame) => frame.id === id);
+
+  return (
+    <S.Layout>
+      <S.Frame frameUrl={selectedFrame ? selectedFrame.url : ""}>
+        {imgs.map((img, index) => (
+          <S.ImageWrapper key={index}>
+            <img src={img} alt={`image-${index}`} />
+          </S.ImageWrapper>
+        ))}
+      </S.Frame>
+    </S.Layout>
+  );
 }
