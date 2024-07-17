@@ -2,10 +2,25 @@ import styled from "styled-components";
 
 export const Layout = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   padding-top: 80px;
   width: 100%;
+  font-family: "Pretendard-Regular";
+`;
+export const HomeBtn = styled.button`
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  padding: 20px 30px;
+  background-color: #d9d9d9;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
 `;
 
 export const Frame = styled.div`
