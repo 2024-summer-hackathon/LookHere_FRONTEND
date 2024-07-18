@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 
@@ -38,7 +38,13 @@ const ChooseKeyWord = () => {
           선택한 키워드에 맞춰 <S.BoldText>최고의 인생네컷 포즈</S.BoldText>를
           추천해드립니다.
         </S.SubTitle>
-        <input onChange={(e) => setInputprompt(e.currentTarget.value)}></input><button onClick={() => handleKeywordInput(inputprompt)}></button>
+        <S.Input
+          placeholder="키워드를 입력해주세요!"
+          onChange={(e) => setInputprompt(e.currentTarget.value)}
+        />
+        <S.BtnBtn onClick={() => handleKeywordInput(inputprompt)}>
+          선택
+        </S.BtnBtn>
         <S.KeyWordContainer>
           {concept.map((item) => (
             <S.KeyWord

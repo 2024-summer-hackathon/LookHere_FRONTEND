@@ -73,9 +73,10 @@ export const CountBox = styled.h2`
   margin-top: 175px;
   left: 0px;
   margin-left: 315px;
+  cursor: pointer;
   color: white;
 `;
 
 export const Noaudio = styled.audio`
-    display: none;
-`
+  display: none;
+`;

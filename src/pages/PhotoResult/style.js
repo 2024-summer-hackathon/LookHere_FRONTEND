@@ -14,7 +14,7 @@ export const HomeBtn = styled.button`
   top: 50px;
   left: 50px;
   padding: 20px 30px;
-  background-color: #d9d9d9;
+  background-color: #ffd1dc;
   border: none;
   border-radius: 8px;
   font-size: 20px;
@@ -44,11 +44,11 @@ export const FrameImg = styled.div`
   background-image: url(${(props) => props.frameUrl});
   background-size: cover;
   background-position: center;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index:5;
+  z-index: 5;
 `;
 
 export const ImageWrapper = styled.div`
@@ -70,22 +70,19 @@ export const ImgDownBtn = styled.button`
   padding: 20px 40px;
   border: none;
   border-radius: 15px;
-  background: #d9d9d9;
+  background: #ffd1dc;
   color: black;
   font-size: 22px;
   transition: 0.2s;
   cursor: pointer;
-
-  &:hover {
-    background: #cfcdcd;
-  }
-
-  &:active {
-    background: darkgray;
-  }
 `;
 
-export const Qr = styled.img `
-  width:200px;
-  height:200px;
-`
+export const Qr = styled.img`
+  width: 350px;
+  height: 350px;
+`;
+
+export const BContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

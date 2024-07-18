@@ -12,6 +12,7 @@ export const Layout = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 7px;
 `;
 
@@ -32,6 +33,32 @@ export const SubTitle = styled.div`
   display: flex;
   justify-content: center;
   gap: 7px;
+  padding-bottom: 30px;
+`;
+
+export const Input = styled.input`
+  display: flex;
+  align-items: center;
+  width: 40%;
+  padding: 15px 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f9f9f9;
+  color: #555;
+  font-family: "Pretendard-Regular";
+  outline: none;
+`;
+
+export const BtnBtn = styled.button`
+  padding: 10px 50px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 8px;
 `;
 
 export const KeyWordContainer = styled.div`
