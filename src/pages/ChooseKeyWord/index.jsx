@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
 
 const ChooseKeyWord = () => {
+  const [inputprompt, setInputprompt] = useState("");
   const navigate = useNavigate();
   const concept = [
     { id: 1, title: "설렘", color: "#FFD1DC" },
@@ -19,6 +20,13 @@ const ChooseKeyWord = () => {
 
   const handleKeywordClick = (title) => {
     localStorage.setItem("selectedKeyword", title);
+    localStorage.setItem("selectType", 1);
+    navigate("/choose-frame");
+  };
+
+  const handleKeywordInput = (input) => {
+    localStorage.setItem("selectedKeyword", input);
+    localStorage.setItem("selectType", 2);
     navigate("/choose-frame");
   };
 
@@ -30,6 +38,7 @@ const ChooseKeyWord = () => {
           선택한 키워드에 맞춰 <S.BoldText>최고의 인생네컷 포즈</S.BoldText>를
           추천해드립니다.
         </S.SubTitle>
+        <input onChange={(e) => setInputprompt(e.currentTarget.value)}></input><button onClick={() => handleKeywordInput(inputprompt)}></button>
         <S.KeyWordContainer>
           {concept.map((item) => (
             <S.KeyWord

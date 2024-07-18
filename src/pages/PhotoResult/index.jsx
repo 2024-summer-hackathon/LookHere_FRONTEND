@@ -5,6 +5,7 @@ import BigAlrisoriFrame from "../../assets/BigAlrisoriFrame.png";
 import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
 import * as S from "./style";
+import qr from "../../assets/qr_code.svg"
 
 export default function PhotoResult({ imgs }) {
   const [FramImg, setFramImg] = useState();
@@ -53,7 +54,7 @@ export default function PhotoResult({ imgs }) {
           </S.ImageWrapper>
         ))}
       </S.Frame>
-      
+      <S.Qr src={qr} alt=""/>
       <S.ImgDownBtn onClick={download}>이미지 다운로드</S.ImgDownBtn>
     </S.Layout>
   );

@@ -24,9 +24,10 @@ export default function Webcam({ setImgs }) {
         if (!change) {
             async function fetchData() {
                 try {
-                    console.log("작동됨");
-                    const response = await axios.get(`http://127.0.0.1:8000/pose/?string=${localStorage.getItem('selectedKeyword')}&people=2`);
                     console.log(localStorage.getItem('selectedKeyword'));
+                    console.log(localStorage.getItem('selectType'));
+                    const response = await axios.get(`http://127.0.0.1:8000/pose/?string=${localStorage.getItem('selectedKeyword')}&people=2&type=${localStorage.getItem('selectType')}`);
+                    
                     
                     if(poseImg == null) setPoseImg(response.data);
                     setChange(true);
@@ -76,7 +77,8 @@ export default function Webcam({ setImgs }) {
             <S.Noaudio ref={audioRef} src={csound}></S.Noaudio>
             <S.Left>
                 <S.TextBox>
-                    <S.ExText1 style={{ float: "left" }}>({localStorage.getItem("selectedKeyword")}) 추천 포즈 #1</S.ExText1>
+                    <S.ExText1 style={{ float: "left" }}>{parseInt(localStorage.getItem("selectType")) == 1 ?
+                    `(${localStorage.getItem("selectedKeyword")})`: ""} 추천 포즈 #1</S.ExText1>
                 </S.TextBox>
                 <S.Pose src={poseImg} alt='' />
             </S.Left>

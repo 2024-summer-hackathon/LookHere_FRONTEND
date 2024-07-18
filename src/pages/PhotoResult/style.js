@@ -32,7 +32,7 @@ export const Frame = styled.div`
   height: 740px;
   padding-top: 20px;
   gap: 15px;
-  margin-right: 20%;
+  margin-right: 10%;
 `;
 
 export const FrameImg = styled.div`
@@ -84,3 +84,8 @@ export const ImgDownBtn = styled.button`
     background: darkgray;
   }
 `;
+
+export const Qr = styled.img `
+  width:200px;
+  height:200px;
+`
